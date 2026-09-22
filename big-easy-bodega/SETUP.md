@@ -103,10 +103,12 @@ WooCommerce Tax / WooCommerce Shipping automated tax can be used instead if you 
 
 ## 6. Door code
 
-1. **WooCommerce → Bodega Settings**
-2. Enter the Building 26 door code.
-3. It appears on the order received page only when status is **Processing** or **Completed**.
-4. Change the code anytime; newly loaded thank-you pages use the updated value. Tip: rotate the code if it is shared too widely, and mark outstanding orders Completed before rotating if needed.
+Default pickup door code: **`12345`** (set automatically when **Big Easy Bodega Core** is activated; single WordPress option `beb_door_code`).
+
+1. Open **WooCommerce → Bodega Settings** — you should see `12345` in **Pickup door code**.
+2. It appears on the order received / thank-you page only when status is **Processing** or **Completed**.
+3. **To change it later:** edit the field on that same settings screen and click Save. Newly loaded thank-you pages use the latest value right away.
+4. Tip: rotate the code if it is shared too widely, and mark outstanding orders Completed before rotating if needed.
 
 ---
 

@@ -67,8 +67,9 @@ You do **not** need a developer for day-to-day stock.
 1. Resident places order → status **On hold** (awaiting payment).
 2. Confirm Venmo / PayPal / Cash App payment (check @heymarii / $heymarii in the apps).
 3. Open **WooCommerce → Orders**, open the order, set status to **Processing** (or **Completed**).
-4. The resident’s thank-you / order page then shows the **door code** from **WooCommerce → Bodega Settings**.
-5. Apartment number, phone, and name are on the order (billing + Apartment field).
+4. The resident’s thank-you / order page then shows the **door code**. Default is **`12345`** (stored once as the `beb_door_code` option).
+5. **To change the door code later:** WordPress Admin → **WooCommerce → Bodega Settings** → edit **Pickup door code** → Save. New thank-you pages use the updated value immediately.
+6. Apartment number, phone, and name are on the order (billing + Apartment field).
 
 ### Item requests
 

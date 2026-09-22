@@ -22,7 +22,7 @@ final class BEB_Admin_Settings {
 	public static function init(): void {
 		add_action( 'admin_menu', array( __CLASS__, 'menu' ) );
 		add_action( 'admin_init', array( __CLASS__, 'register' ) );
-		add_action( 'admin_head', array( __CLASS__, 'hide_last_name_css' ) );
+		BEB_Door_Code::maybe_seed_default();
 	}
 
 	/**
@@ -50,7 +50,7 @@ final class BEB_Admin_Settings {
 			array(
 				'type'              => 'string',
 				'sanitize_callback' => 'sanitize_text_field',
-				'default'           => '',
+				'default'           => BEB_Door_Code::DEFAULT_CODE,
 			)
 		);
 	}
@@ -82,7 +82,7 @@ final class BEB_Admin_Settings {
 								value="<?php echo esc_attr( BEB_Door_Code::get_code() ); ?>"
 								autocomplete="off"
 							/>
-							<p class="description"><?php esc_html_e( 'Building 26 entry code for residents who have paid. Change it anytime; new thank-you pages use the latest value.', 'beb-bodega-core' ); ?></p>
+							<p class="description"><?php esc_html_e( 'Building 26 entry code for residents who have paid. Default is 12345 — change it anytime; new thank-you pages use the latest value.', 'beb-bodega-core' ); ?></p>
 						</td>
 					</tr>
 				</table>
@@ -97,13 +97,5 @@ final class BEB_Admin_Settings {
 			</ul>
 		</div>
 		<?php
-	}
-
-	/**
-	 * Hide unused last-name field on checkout via admin? No — front CSS.
-	 * Keep a tiny admin note style only.
-	 */
-	public static function hide_last_name_css(): void {
-		// Intentionally empty; front CSS handled in theme for .beb-visually-hidden if needed.
 	}
 }

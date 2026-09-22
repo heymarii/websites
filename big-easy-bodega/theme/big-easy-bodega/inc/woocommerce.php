@@ -112,12 +112,10 @@ function beb_thankyou_pickup_block( int $order_id ): void {
 	$phone = beb_get_option( 'beb_contact_phone', '' );
 	$email = beb_get_option( 'beb_contact_email', 'hello@bigeasybodega.com' );
 
-	$door_code = '';
-	if ( $show_code && function_exists( 'beb_get_door_code' ) ) {
-		$door_code = beb_get_door_code();
-	} elseif ( $show_code ) {
-		$door_code = (string) get_option( 'beb_door_code', '' );
-	}
+	$door_code = ( $show_code && function_exists( 'beb_get_door_code' ) )
+		? beb_get_door_code()
+		: '';
+
 
 	echo '<section class="beb-pickup-receipt" aria-labelledby="beb-pickup-heading">';
 	echo '<h2 id="beb-pickup-heading">' . esc_html__( 'Pickup instructions', 'big-easy-bodega' ) . '</h2>';

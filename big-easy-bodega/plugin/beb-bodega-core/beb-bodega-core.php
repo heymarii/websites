@@ -55,10 +55,11 @@ function beb_get_door_code(): string {
 }
 
 /**
- * Activation: flush rewrite rules for CPT.
+ * Activation: flush rewrite rules for CPT; seed door code default once.
  */
 function beb_core_activate(): void {
 	BEB_Item_Requests::register_post_type();
+	BEB_Door_Code::maybe_seed_default();
 	flush_rewrite_rules();
 }
 register_activation_hook( __FILE__, 'beb_core_activate' );

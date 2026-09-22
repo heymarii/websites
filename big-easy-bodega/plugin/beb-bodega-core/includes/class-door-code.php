@@ -13,26 +13,41 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /**
  * Stores and retrieves the building door code.
+ *
+ * Single source of truth: option `beb_door_code`, default {@see BEB_Door_Code::DEFAULT_CODE}.
  */
 final class BEB_Door_Code {
 
-	public const OPTION_KEY = 'beb_door_code';
+	public const OPTION_KEY   = 'beb_door_code';
+	public const DEFAULT_CODE = '12345';
 
 	/**
 	 * Hooks.
 	 */
 	public static function init(): void {
-		// Reserved for future hooks; settings UI lives in BEB_Admin_Settings.
+		// Settings UI lives in BEB_Admin_Settings.
 	}
 
 	/**
-	 * Current door code (empty if unset).
+	 * Ensure the option exists with the default on first install.
+	 */
+	public static function maybe_seed_default(): void {
+		if ( false === get_option( self::OPTION_KEY, false ) ) {
+			add_option( self::OPTION_KEY, self::DEFAULT_CODE, '', false );
+		}
+	}
+
+	/**
+	 * Current door code (falls back to DEFAULT_CODE when unset).
 	 *
 	 * @return string
 	 */
 	public static function get_code(): string {
-		$value = get_option( self::OPTION_KEY, '' );
-		return is_string( $value ) ? $value : '';
+		$value = get_option( self::OPTION_KEY, self::DEFAULT_CODE );
+		if ( ! is_string( $value ) || '' === $value ) {
+			return self::DEFAULT_CODE;
+		}
+		return $value;
 	}
 
 	/**
