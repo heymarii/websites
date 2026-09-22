@@ -1,0 +1,110 @@
+[
+  {
+    "name": "Café Bustelo Ground Coffee",
+    "sku": "BEB-COFFEE-01",
+    "regular_price": "8.99",
+    "sale_price": "",
+    "category": "pantry",
+    "short_description": "Classic espresso grind — bodega staple.",
+    "stock": 24
+  },
+  {
+    "name": "Instant Ramen 6-Pack",
+    "sku": "BEB-RAMEN-01",
+    "regular_price": "4.50",
+    "sale_price": "3.99",
+    "category": "pantry",
+    "short_description": "Late-night classic, chicken flavor.",
+    "stock": 40
+  },
+  {
+    "name": "Tortilla Chips",
+    "sku": "BEB-CHIPS-01",
+    "regular_price": "3.75",
+    "sale_price": "",
+    "category": "pantry",
+    "short_description": "Salted corn chips, shareable bag.",
+    "stock": 30
+  },
+  {
+    "name": "Sparkling Water 8-Pack",
+    "sku": "BEB-SPARK-01",
+    "regular_price": "6.49",
+    "sale_price": "5.99",
+    "category": "drinks",
+    "short_description": "Crisp and cold — lime.",
+    "stock": 28
+  },
+  {
+    "name": "Bottled Sweet Tea",
+    "sku": "BEB-TEA-01",
+    "regular_price": "2.25",
+    "sale_price": "",
+    "category": "drinks",
+    "short_description": "Southern sweet tea, 20oz.",
+    "stock": 36
+  },
+  {
+    "name": "Cola 12-Pack Cans",
+    "sku": "BEB-COLA-01",
+    "regular_price": "7.99",
+    "sale_price": "",
+    "category": "drinks",
+    "short_description": "Ice-cold fridge stock.",
+    "stock": 20
+  },
+  {
+    "name": "Paper Towels 6-Roll",
+    "sku": "BEB-TOWEL-01",
+    "regular_price": "9.50",
+    "sale_price": "8.50",
+    "category": "paper-products",
+    "short_description": "Absorbent rolls for the apartment.",
+    "stock": 18
+  },
+  {
+    "name": "Toilet Paper 12-Pack",
+    "sku": "BEB-TP-01",
+    "regular_price": "11.99",
+    "sale_price": "",
+    "category": "paper-products",
+    "short_description": "Soft 2-ply, always needed.",
+    "stock": 22
+  },
+  {
+    "name": "Facial Tissues",
+    "sku": "BEB-TISSUE-01",
+    "regular_price": "2.99",
+    "sale_price": "",
+    "category": "paper-products",
+    "short_description": "Cube box for the counter.",
+    "stock": 25
+  },
+  {
+    "name": "AA Batteries 8-Pack",
+    "sku": "BEB-BATT-01",
+    "regular_price": "6.99",
+    "sale_price": "",
+    "category": "misc",
+    "short_description": "For remotes and game controllers.",
+    "stock": 16
+  },
+  {
+    "name": "Phone Charging Cable",
+    "sku": "BEB-CABLE-01",
+    "regular_price": "9.99",
+    "sale_price": "7.99",
+    "category": "misc",
+    "short_description": "USB-C cable, 3ft.",
+    "stock": 14
+  },
+  {
+    "name": "Laundry Detergent Pods",
+    "sku": "BEB-LAUNDRY-01",
+    "regular_price": "12.50",
+    "sale_price": "",
+    "category": "misc",
+    "short_description": "24-count pods — scent free.",
+    "stock": 12
+  }
+]
