@@ -91,7 +91,7 @@ final class BEB_Admin_Settings {
 			<hr />
 			<h2><?php esc_html_e( 'Also configure', 'beb-bodega-core' ); ?></h2>
 			<ul>
-				<li><?php esc_html_e( 'Appearance → Customize → Big Easy Bodega — Venmo, PayPal, Cash App, Apple Pay links, maps embed, pickup copy.', 'beb-bodega-core' ); ?></li>
+				<li><?php esc_html_e( 'Appearance → Customize → Big Easy Bodega — Venmo (@heymarii), PayPal, Cash App ($heymarii); Apple Pay optional; maps embed; pickup copy.', 'beb-bodega-core' ); ?></li>
 				<li><?php esc_html_e( 'WooCommerce → Settings → Payments — enable “Bodega payment links”.', 'beb-bodega-core' ); ?></li>
 				<li><?php esc_html_e( 'WooCommerce → Settings → Tax — Texas sales tax (see SETUP.md).', 'beb-bodega-core' ); ?></li>
 			</ul>

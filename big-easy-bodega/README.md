@@ -2,7 +2,7 @@
 
 WordPress theme + small companion plugin for **[bigeasybodega.com](https://bigeasybodega.com)** — a New Orleans–inspired convenience bodega for residents of **10X Apartments, Building 26 (next to apartment 26102)**.
 
-Residents browse live WooCommerce stock, check out online, pay via **Venmo / PayPal / Cash App / Apple Pay** (instruction links), then pick up with a **door code** after you confirm payment.
+Residents browse live WooCommerce stock, check out online, pay via **Venmo (@heymarii) / PayPal / Cash App ($heymarii)**, then pick up with a **door code** after you confirm payment. Apple Pay is optional and omitted for v1.
 
 ## What’s in this folder
 
@@ -65,7 +65,7 @@ You do **not** need a developer for day-to-day stock.
 ### Orders & door code
 
 1. Resident places order → status **On hold** (awaiting payment).
-2. Confirm Venmo/PayPal/Cash App/Apple Pay payment (check the payment app).
+2. Confirm Venmo / PayPal / Cash App payment (check @heymarii / $heymarii in the apps).
 3. Open **WooCommerce → Orders**, open the order, set status to **Processing** (or **Completed**).
 4. The resident’s thank-you / order page then shows the **door code** from **WooCommerce → Bodega Settings**.
 5. Apartment number, phone, and name are on the order (billing + Apartment field).
@@ -76,13 +76,22 @@ Homepage form submissions appear under **Item Requests** in the admin menu (name
 
 ### Payment links & location copy
 
-**Appearance → Customize → Big Easy Bodega** — Venmo, PayPal, Cash App, Apple Pay URLs (placeholders until you replace them), Google Maps embed URL, pickup instructions, contact phone/email.
+Checkout payment links ship with the owner handles already set (Customizer defaults):
+
+| Method | Handle / link |
+|--------|----------------|
+| Venmo | [@heymarii](https://venmo.com/u/heymarii) |
+| PayPal | [paypal.me/heymarii](https://paypal.me/heymarii) |
+| Cash App | [$heymarii](https://cash.app/$heymarii) (cashtag uses `$`) |
+| Apple Pay | Not offered in v1 — leave the Customizer field blank (or add a URL later) |
+
+Change links anytime under **Appearance → Customize → Big Easy Bodega**. Same screen: Google Maps embed, pickup instructions, contact phone/email.
 
 ## Architecture notes
 
 - Presentation and WooCommerce template overrides live in the **theme**.
 - Checkout fields, CPT, door code option, and the offline **Bodega payment links** gateway live in the **plugin** (survives theme switches).
-- No payment API secrets in code — only public payment-profile URLs you configure.
+- No payment API secrets in code — public payment-profile URLs only (defaults: Venmo `@heymarii`, PayPal `paypal.me/heymarii`, Cash App `$heymarii`).
 
 ## Requirements
 

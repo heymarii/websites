@@ -82,23 +82,22 @@ WooCommerce Tax / WooCommerce Shipping automated tax can be used instead if you 
 
 ---
 
-## 5. Payment handles (placeholders → real)
+## 5. Payment handles
 
-**No API secrets** are stored in the theme. v1 uses public payment links.
+**No API secrets** are stored in the theme. v1 uses public payment-profile links. These are the **default Customizer values** (already baked into the theme):
 
-1. **Appearance → Customize → Big Easy Bodega** and replace placeholders:
+| Method | Display | URL |
+|--------|---------|-----|
+| Venmo | `@heymarii` | `https://venmo.com/u/heymarii` |
+| PayPal | paypal.me/heymarii | `https://paypal.me/heymarii` |
+| Cash App | `$heymarii` (cashtag uses `$`) | `https://cash.app/$heymarii` |
+| Apple Pay | — | **Omitted for v1** (Customizer field blank / optional) |
 
-| Setting | Placeholder example |
-|---------|---------------------|
-| Venmo | `https://venmo.com/u/YOUR_VENMO_HANDLE` |
-| PayPal | `https://paypal.me/YOUR_PAYPAL_HANDLE` |
-| Cash App | `https://cash.app/$YOUR_CASHAPP_HANDLE` |
-| Apple Pay | Link to a short instructions page or contact method (v1 placeholder) |
-
+1. Confirm under **Appearance → Customize → Big Easy Bodega** (only change if the owner updates handles).
 2. **WooCommerce → Settings → Payments** → enable **Bodega payment links**. Disable gateways you do not use.
-3. Test: place an order, confirm links open your profiles, and payment note asks for apartment number.
+3. Test: place an order, confirm links open `@heymarii` / `$heymarii` profiles, and the payment note asks for apartment number.
 
-**Owner workflow:** when payment arrives in the app, open the WooCommerce order → set status to **Processing**. Stock already decreased when the order was placed; the thank-you page then shows the door code.
+**Owner workflow:** when payment arrives in Venmo, PayPal, or Cash App, open the WooCommerce order → set status to **Processing**. Stock already decreased when the order was placed; the thank-you page then shows the door code.
 
 ---
 

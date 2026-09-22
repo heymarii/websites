@@ -1,6 +1,6 @@
 <?php
 /**
- * Offline payment-instructions gateway (Venmo / PayPal / Cash App / Apple Pay links).
+ * Offline payment-instructions gateway (Venmo / PayPal / Cash App links).
  *
  * @package BEB_Bodega_Core
  */
@@ -47,17 +47,17 @@ final class BEB_Payment_Gateway {
 			public function __construct() {
 				$this->id                 = 'beb_payment_links';
 				$this->method_title       = __( 'Bodega payment links', 'beb-bodega-core' );
-				$this->method_description = __( 'Residents pay via Venmo, PayPal, Cash App, or Apple Pay using the links shown at checkout. Mark the order Processing after you confirm payment so the door code appears.', 'beb-bodega-core' );
+				$this->method_description = __( 'Residents pay via Venmo (@heymarii), PayPal (paypal.me/heymarii), or Cash App ($heymarii) using the links shown at checkout. Mark the order Processing after you confirm payment so the door code appears. Apple Pay is optional and off by default for v1.', 'beb-bodega-core' );
 				$this->has_fields         = false;
 				$this->supports           = array( 'products' );
 
 				$this->init_form_fields();
 				$this->init_settings();
 
-				$this->title       = $this->get_option( 'title', __( 'Pay with Venmo / PayPal / Cash App / Apple Pay', 'beb-bodega-core' ) );
+				$this->title       = $this->get_option( 'title', __( 'Pay with Venmo / PayPal / Cash App', 'beb-bodega-core' ) );
 				$this->description = $this->get_option(
 					'description',
-					__( 'Place your order, then pay the total with one of the payment apps linked on this page. Include your apartment number in the payment note.', 'beb-bodega-core' )
+					__( 'Place your order, then pay the total via Venmo (@heymarii), PayPal, or Cash App ($heymarii). Include your apartment number in the payment note.', 'beb-bodega-core' )
 				);
 				$this->enabled     = $this->get_option( 'enabled', 'yes' );
 
@@ -79,14 +79,14 @@ final class BEB_Payment_Gateway {
 						'title'       => __( 'Title', 'beb-bodega-core' ),
 						'type'        => 'text',
 						'description' => __( 'Shown to residents at checkout.', 'beb-bodega-core' ),
-						'default'     => __( 'Pay with Venmo / PayPal / Cash App / Apple Pay', 'beb-bodega-core' ),
+						'default'     => __( 'Pay with Venmo / PayPal / Cash App', 'beb-bodega-core' ),
 						'desc_tip'    => true,
 					),
 					'description' => array(
 						'title'       => __( 'Description', 'beb-bodega-core' ),
 						'type'        => 'textarea',
 						'description' => __( 'Payment instructions under the method title. Edit the actual app links under Appearance → Customize → Big Easy Bodega.', 'beb-bodega-core' ),
-						'default'     => __( 'Place your order, then pay the total with one of the payment apps linked on this page. Include your apartment number in the payment note.', 'beb-bodega-core' ),
+						'default'     => __( 'Place your order, then pay the total via Venmo (@heymarii), PayPal, or Cash App ($heymarii). Include your apartment number in the payment note.', 'beb-bodega-core' ),
 					),
 				);
 			}
@@ -109,7 +109,7 @@ final class BEB_Payment_Gateway {
 
 				$order->update_status(
 					'on-hold',
-					__( 'Awaiting Venmo/PayPal/Cash App/Apple Pay payment. Mark Processing after you confirm funds.', 'beb-bodega-core' )
+					__( 'Awaiting Venmo/PayPal/Cash App payment. Mark Processing after you confirm funds.', 'beb-bodega-core' )
 				);
 
 				if ( function_exists( 'wc_reduce_stock_levels' ) ) {

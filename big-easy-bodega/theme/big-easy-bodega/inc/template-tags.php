@@ -45,25 +45,27 @@ function beb_the_header_logo(): void {
 /**
  * Payment method links from Customizer.
  *
+ * Defaults match owner handles (@heymarii / $heymarii). Apple Pay omitted unless a URL is set.
+ *
  * @return array<string,array{label:string,url:string}>
  */
 function beb_payment_links(): array {
 	$links = array(
 		'venmo'    => array(
-			'label' => __( 'Venmo', 'big-easy-bodega' ),
-			'url'   => beb_get_option( 'beb_venmo_url', 'https://venmo.com/u/YOUR_VENMO_HANDLE' ),
+			'label' => __( 'Venmo @heymarii', 'big-easy-bodega' ),
+			'url'   => beb_get_option( 'beb_venmo_url', 'https://venmo.com/u/heymarii' ),
 		),
 		'paypal'   => array(
 			'label' => __( 'PayPal', 'big-easy-bodega' ),
-			'url'   => beb_get_option( 'beb_paypal_url', 'https://paypal.me/YOUR_PAYPAL_HANDLE' ),
+			'url'   => beb_get_option( 'beb_paypal_url', 'https://paypal.me/heymarii' ),
 		),
 		'cashapp'  => array(
-			'label' => __( 'Cash App', 'big-easy-bodega' ),
-			'url'   => beb_get_option( 'beb_cashapp_url', 'https://cash.app/$YOUR_CASHAPP_HANDLE' ),
+			'label' => __( 'Cash App $heymarii', 'big-easy-bodega' ),
+			'url'   => beb_get_option( 'beb_cashapp_url', 'https://cash.app/$heymarii' ),
 		),
 		'applepay' => array(
 			'label' => __( 'Apple Pay', 'big-easy-bodega' ),
-			'url'   => beb_get_option( 'beb_applepay_url', 'https://apple.com/apple-pay/' ),
+			'url'   => beb_get_option( 'beb_applepay_url', '' ),
 		),
 	);
 
